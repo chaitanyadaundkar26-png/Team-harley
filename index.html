@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PCU Campus Connect | Student Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="#" aria-label="PCU Campus Connect home"><div class="crest">PCU</div><div><strong>PCU CAMPUS CONNECT</strong><small>LEARN · GROW · ACHIEVE</small></div></a>
+<nav class="navlinks"><a href="#events">Explore events</a><button id="myNav">My registrations <span id="navCount">0</span></button><button id="adminNav">Organizer tools</button><button class="btn" id="joinNav">Register now ↗</button></nav>
+</div></header>
+<main class="container">
+<section class="hero"><div class="hero-copy"><div class="eyebrow">PIMPRI CHINCHWAD UNIVERSITY · PUNE</div><h1>Campus life.<br><span>Beyond classrooms.</span></h1><p>Discover events, meet your community, explore your interests, and make your PCU journey unforgettable.</p><div class="hero-actions"><button class="btn" id="exploreBtn">Explore events ↓</button><button class="btn-light" id="myHero">My registrations <span id="heroCount">0</span></button></div></div><div class="hero-mark" aria-hidden="true">PCU</div></section>
+<section class="stats"><div class="stat"><div class="stat-icon">🗓️</div><div><strong id="eventCount">6</strong><small>Sample events</small></div></div><div class="stat"><div class="stat-icon">🎟️</div><div><strong id="spotsCount">260</strong><small>Places available</small></div></div><div class="stat"><div class="stat-icon">🙌</div><div><strong id="registeredCount">0</strong><small>Your registrations</small></div></div></section>
+<section id="events"><div class="section-head"><div><div class="eyebrow" style="color:var(--maroon)">FIND YOUR NEXT THING</div><h2>What's happening at PCU?</h2><div class="muted">Explore. Participate. Make it count.</div></div><input id="search" class="search" type="search" placeholder="⌕  Search events..." aria-label="Search events"></div>
+<div id="filters" class="filters"><button class="chip active" data-cat="All">All events</button><button class="chip" data-cat="Technology">💻 Technology</button><button class="chip" data-cat="Cultural">🎭 Cultural</button><button class="chip" data-cat="Workshop">🛠 Workshops</button><button class="chip" data-cat="Sports">⚽ Sports</button><button class="chip" data-cat="Music">🎵 Music</button></div>
+<div class="toolbar"><button class="chip" id="favoritesOnly">♡ Saved events <span id="favCount" class="count">0</span></button><label class="muted" for="sortEvents">Sort by</label><select id="sortEvents" aria-label="Sort events"><option value="date">Soonest first</option><option value="title">Event name A–Z</option><option value="spots">Most places available</option></select><button class="mini-btn" id="resetFilters">Reset filters</button></div>
+<div id="grid" class="events"></div></section>
+<section id="adminPanel" class="admin-panel">
+<div class="section-head"><div><div class="eyebrow" style="color:var(--maroon)">DEMO ORGANIZER WORKSPACE</div><h2 style="font-size:21px;margin:8px 0">Manage campus events</h2><div class="muted">Add new sample events or remove events from this browser prototype.</div></div><button class="close" id="hideAdmin" aria-label="Close organizer tools">×</button></div>
+<form id="adminForm"><div class="admin-grid">
+<input name="title" required maxlength="80" placeholder="Event title">
+<select name="cat" required><option value="">Category</option><option>Technology</option><option>Cultural</option><option>Workshop</option><option>Sports</option><option>Music</option></select>
+<input name="date" required type="date" min="2026-10-26" aria-label="Event date">
+<input name="time" required maxlength="50" placeholder="Time (e.g. 2:00 PM – 4:00 PM)">
+<input name="venue" required maxlength="80" placeholder="Venue">
+<input name="spots" required type="number" min="1" max="500" placeholder="Capacity">
+<input name="emoji" maxlength="4" placeholder="Emoji (e.g. 🎓)">
+<input name="desc" required maxlength="240" placeholder="Short event description">
+</div><p class="notice">Organizer tools are for demonstration only. Changes stay in this browser and are not published to an official PCU system.</p><button class="btn" type="submit">＋ Add event</button></form>
+<div id="adminList" class="admin-list"></div>
+</section>
+<section id="mine" class="mine"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div><div class="eyebrow" style="color:var(--maroon)">YOUR CAMPUS CALENDAR</div><h2 style="font-size:21px;margin:8px 0">My registrations</h2><div class="muted">Events you have signed up for in this browser.</div></div><button id="hideMine" class="close" aria-label="Close registrations">×</button></div><div id="mineItems" class="mine-items"></div></section>
+<footer class="footer"><span><strong style="color:var(--navy)">PCU Campus Connect</strong> · Learn | Grow | Achieve</span><span>Student event prototype · <a href="https://pcu.edu.in/" target="_blank" rel="noopener">Official PCU website ↗</a></span><span>Sample events only; confirm details with university organizers.</span></footer>
+</main><div id="modalRoot"></div><div id="toastRoot"></div>
+  <script src="script.js" defer></script>
+</body></html>
